@@ -1,68 +1,59 @@
-
+// server.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
+
+
 const app = express();
 
 // Middleware
-const allowedOrigins = ["http://localhost:3000", "http://127.0.0.1:3000"];
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    }
-}));
-app.use(express.json()); // Parse JSON requests
+app.use(cors());        // Allow frontend requests
+app.use(express.json());        // Parse JSON request body
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI, {           //connects mongo database to node
     useNewUrlParser: true,
     useUnifiedTopology: true
-}).then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB Connection Error:", err));
+})
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.error("MongoDB connection error:", err));
 
-// Patient Schema with validation
-const PatientSchema = new mongoose.Schema({
+// Appointment Schema
+const appointmentSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    email: { type: String, required: true },
     phone: { type: String, required: true },
+    email: { type: String, required: true },
+    doctor: { type: String, required: true },
     date: { type: String, required: true },
-    message: { type: String }
+    message: String,
+    createdAt: { type: Date, default: Date.now }
 });
 
-const Patient = mongoose.model("Patient", PatientSchema);
+// Appointment Model
+const Appointment = mongoose.model("Appointment", appointmentSchema);
 
-// Route to handle form submission
+// Route to save appointment
 app.post("/api/book", async (req, res) => {
     try {
-        const { name, email, phone, date, message } = req.body;
-        if (!name || !email || !phone || !date) {
+        const { name, phone, email,doctor, date, message } = req.body;
+        if (!name || !phone || !email || !date || !doctor) {
             return res.status(400).json({ error: "All fields except message are required" });
         }
-        const newPatient = new Patient({ name, email, phone, date, message });
-        await newPatient.save();
+
+        const newAppointment = new Appointment({ name, phone, email,doctor, date, message });
+        await newAppointment.save();
+
         res.status(201).json({ message: "Appointment booked successfully!" });
     } catch (error) {
-        console.error("Error:", error);
+        console.error("Error saving appointment:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
 
-// Get all appointments
-app.get("/api/bookings", async (req, res) => {
-    try {
-        const bookings = await Patient.find();
-        res.status(200).json(bookings);
-    } catch (error) {
-        console.error("Error fetching bookings:", error);
-        res.status(500).json({ error: "Failed to fetch bookings" });
-    }
-});
+// Optional: Route to get all appointments
 
-// Start Server
+
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

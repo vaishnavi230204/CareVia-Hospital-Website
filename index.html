@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body> 
+
+<body>
     <header class="header">
         <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> CareVia </a>
 
@@ -27,19 +29,22 @@
         <div class="user-info">
             <span id="welcomeUser"></span>
             <button onclick="logoutUser()" class="logout-btn">Logout</button>
-          </div>          
+        </div>
 
     </header>
 
     <section class="home" id="home">
-        
+
         <div class="image">
-            <img height="600" src="img/1.svg" alt="">                <!--Image-->
+            <img height="600" src="img/1.svg" alt=""> <!--Image-->
         </div>
 
         <div class="content">
             <h3>Stay safe, Stay Healthy</h3>
-            <p>Welcome to CareVia! We're here to provide you with easy and convenient access to quality healthcare. From booking appointments to viewing your medical records, everything is just a click away. Our user-friendly interface ensures a smooth experience across all devices. Your health and privacy are our top priorities.</p>
+            <p>Welcome to CareVia! We're here to provide you with easy and convenient access to quality healthcare. From
+                booking appointments to viewing your medical records, everything is just a click away. Our user-friendly
+                interface ensures a smooth experience across all devices. Your health and privacy are our top
+                priorities.</p>
             <a href="#" class="btn"> contact us <span class="fas fa-chevron-right"></span></a>
         </div>
     </section>
@@ -74,49 +79,49 @@
             <div class="box">
                 <i class="fas fa-notes-medical"></i>
                 <h3>Free Checkups</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, cumque?</p>
+                <p>Free monthly health camps for general checkups. Eye checkups during special drives</p>
                 <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
             </div>
 
             <div class="box">
                 <i class="fas fa-ambulance"></i>
                 <h3>24/7 Ambulance</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, cumque?</p>
+                <p>Quick patient transfer to the nearest hospital with oxygen supply and first-aid kits</p>
                 <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
             </div>
 
             <div class="box">
                 <i class="fas fa-user-md"></i>
                 <h3>Expert Doctors</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, cumque?</p>
+                <p>Highly qualified and board-certified specialists for 15+ medical departments</p>
                 <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
             </div>
 
             <div class="box">
                 <i class="fas fa-pills"></i>
                 <h3>Medicines</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, cumque?</p>
+                <p>In-house pharmacy with 24/7 availability Authentic and high-quality</p>
                 <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
             </div>
 
             <div class="box">
                 <i class="fas fa-procedures"></i>
                 <h3>Bed Facility</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, cumque?</p>
+                <p>Clean and comfortable patient rooms 24/7 nursing care and medical supervision</p>
                 <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
             </div>
 
             <div class="box">
                 <i class="fas fa-heartbeat"></i>
                 <h3>Total Care</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, cumque?</p>
+                <p>Holistic approach focusing on both physical and mental well-being</p>
                 <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
             </div>
         </div>
     </section>
-    
+
     <section class="about" id="about">
-        
+
         <h1 class="heading"> <span>about</span> us </h1>
 
         <div class="row">
@@ -127,8 +132,11 @@
 
             <div class="content">
                 <h3> We take care of your healthy life</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolores quo ab illum expedita cum inventore excepturi recusandae enim assumenda nulla officia deserunt in vel necessitatibus dignissimos est, tempore iure.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed magnam aperiam consectetur omnis veniam assumenda facilis error quos ullam eveniet.</p>
+                <p>We prioritize your overall well-being by offering preventive healthcare, regular checkups, and expert
+                    medical guidance.
+                    Our team ensures personalized care plans, focusing on fitness, nutrition, and mental wellness to
+                    keep you and your family healthy.</p>
+                <p>Dedicated to keeping you and your family healthy.</p>
                 <a href="#" class="btn"> Learn More <span class="fas fa-chevron-right"></span> </a>
             </div>
 
@@ -200,7 +208,7 @@
             </div>
 
             <div class="box">
-                <img  src="img/doc6.jpeg" alt=""> <!--Image-->
+                <img src="img/doc6.jpeg" alt=""> <!--Image-->
                 <h3>Dr. Kieran Vale</h3>
                 <span>Expert Doctor</span>
                 <div class="share">
@@ -226,6 +234,8 @@
                 <input type="text" id="name" placeholder="Your Name" class="box" required>
                 <input type="tel" id="phone" placeholder="Your Number" class="box" required>
                 <input type="email" id="email" placeholder="Your Email" class="box" required>
+                <input type="text" id="doctor" placeholder="Doctor Name" class="box" required>
+
                 <input type="date" id="date" class="box" required>
                 <textarea id="message" placeholder="Your Message" class="box"></textarea>
                 <input type="submit" value="Book Now" class="btn">
@@ -233,109 +243,116 @@
             </form>
         </div>
     </section>
-    
+
     <script>
-    document.getElementById("appointmentForm").addEventListener("submit", async function(event) {
-        event.preventDefault(); // Prevent page reload
-    
-        const responseMessage = document.getElementById("responseMessage");
-        responseMessage.textContent = "Processing..."; // Show processing state
-        responseMessage.style.color = "blue"; // Indicate action in progress
-    
-        const patientData = {
-            name: document.getElementById("name").value.trim(),
-            phone: document.getElementById("phone").value.trim(),
-            email: document.getElementById("email").value.trim(),
-            date: document.getElementById("date").value.trim(),
-            message: document.getElementById("message").value.trim()
-        };
-    
-        if (!patientData.name || !patientData.phone || !patientData.email || !patientData.date) {
-            responseMessage.textContent = "Please fill in all required fields.";
-            responseMessage.style.color = "red";
-            return;
-        }
-    
-        try {
-            const response = await fetch("http://localhost:5000/api/book", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(patientData)
-            });
-    
-            const result = await response.json();
-    
-            if (response.ok) {
-                responseMessage.textContent = result.message;
-                responseMessage.style.color = "green";
-                document.getElementById("appointmentForm").reset(); // Clear the form
-            } else {
-                responseMessage.textContent = result.error || "Failed to book appointment.";
+        document.getElementById("appointmentForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent page reload
+
+            const responseMessage = document.getElementById("responseMessage");
+            responseMessage.textContent = "Processing..."; // Show processing state
+            responseMessage.style.color = "blue"; // Indicate action in progress
+
+            const patientData = {
+                name: document.getElementById("name").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                 doctor: document.getElementById("doctor").value.trim(),
+                date: document.getElementById("date").value.trim(),
+                message: document.getElementById("message").value.trim()
+            };
+
+            if (!patientData.name || !patientData.phone || !patientData.email || !patientData.date ||!patientData.doctor) {
+                responseMessage.textContent = "Please fill in all required fields.";
+                responseMessage.style.color = "red";
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:5000/api/book", { // send data to backend
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(patientData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    responseMessage.textContent = result.message;
+                    responseMessage.style.color = "green";
+                    document.getElementById("appointmentForm").reset(); // Clear the form
+                } else {
+                    responseMessage.textContent = result.error || "Failed to book appointment.";
+                    responseMessage.style.color = "red";
+                }
+            } catch (error) {
+                responseMessage.textContent = "Server error. Please try again.";
                 responseMessage.style.color = "red";
             }
-        } catch (error) {
-            responseMessage.textContent = "Server error. Please try again.";
-            responseMessage.style.color = "red";
-        }
-    });
+        });
     </script>
-    
-    
+
+
 
     <section class="review" id="review">
-       <h1 class="heading"> Client's <span>Review</span> </h1> 
-       <div class="box-container">
-        <div class="box">
-            <img src="img/p1.jpeg" alt="">
-            <h3>Elira Stone</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+        <h1 class="heading"> Client's <span>Review</span> </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="img/p1.jpeg" alt="">
+                <h3>Elira Stone</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text">"I had an excellent experience at this hospital. The staff was extremely caring and
+                    attentive, and the doctors provided clear guidance for my treatment. I felt safe and well looked
+                    after throughout my stay, and the follow-up support was impressive.</p>
+
             </div>
-            <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus accusamus adipisci, veniam voluptatem explicabo at dolore illum quibusdam repudiandae mollitia qui sint quo obcaecati similique delectus ab sunt minus fugit?</p>
+
+            <div class="box">
+                <img src="img/p2.jpeg" alt="">
+                <h3>Mira Callen</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text">"The ambulance service was incredibly quick and professional. The paramedics were
+                    skilled, supportive, and handled the emergency with great care. The hospital staff ensured a smooth
+                    admission process, making a stressful situation much easier to manage."</p>
+
+            </div>
+
+            <div class="box">
+                <img src="img/p3.jpeg" alt="">
+                <h3>Elias Thorn</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text">"I attended one of their free health checkup camps, and it was very well organized. The
+                    doctors explained my test results in detail, and the staff was friendly and helpful throughout.
+                    Their dedication to patient care and preventive health is truly commendable."</p>
+
+            </div>
+
 
         </div>
-
-        <div class="box">
-            <img src="img/p2.jpeg" alt="">
-            <h3>Mira Callen</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus accusamus adipisci, veniam voluptatem explicabo at dolore illum quibusdam repudiandae mollitia qui sint quo obcaecati similique delectus ab sunt minus fugit?</p>
-            
-        </div>
-
-        <div class="box">
-            <img src="img/p3.jpeg" alt="">
-            <h3>Elias Thorn</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus accusamus adipisci, veniam voluptatem explicabo at dolore illum quibusdam repudiandae mollitia qui sint quo obcaecati similique delectus ab sunt minus fugit?</p>
-            
-        </div>
-
-        
-       </div>
     </section>
 
     <section class="blogs" id="blogs">
         <h1 class="heading"> Our <span>Blogs</span></h1>
-    
+
         <div class="box-container"> <!-- Single container for all blog boxes -->
-    
+
             <div class="box">
                 <div class="image">
                     <img src="img/b1.jpeg" alt="Blog Image">
@@ -346,11 +363,12 @@
                         <a href="#"> <i class="fas fa-user"></i> by admin </a>
                     </div>
                     <h3>The Role of Technology in Modern Healthcare</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="btn"> Learn more <span class="fas fa-chevron-right"></span></a>
+                    <p>Technology improves healthcare through faster diagnoses and better patient care.</p>
+                    <a href="https://www.apollo247.com/health-topics/general-medical-consultation//technology-in-modern-healthcare-role"
+                        class="btn"> Learn more <span class="fas fa-chevron-right"></span></a>
                 </div>
             </div>
-    
+
             <div class="box">
                 <div class="image">
                     <img src="img/b2.jpeg" alt="Blog Image">
@@ -361,11 +379,13 @@
                         <a href="#"> <i class="fas fa-user"></i> by admin </a>
                     </div>
                     <h3>What to Expect During Your First Hospital Visit</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="btn"> Learn more <span class="fas fa-chevron-right"></span></a>
+                    <p>During your first hospital visit, expect thorough checkups, friendly guidance, and personalized
+                        care from our staff.</p>
+                    <a href="https://karpagamhospital.in/first-hospital-visit-guide/" class="btn"> Learn more <span
+                            class="fas fa-chevron-right"></span></a>
                 </div>
             </div>
-    
+
             <div class="box">
                 <div class="image">
                     <img src="img/b3.png" alt="Blog Image">
@@ -376,13 +396,14 @@
                         <a href="#"> <i class="fas fa-user"></i> by admin </a>
                     </div>
                     <h3>The Importance of Regular Health Checkups</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="btn"> Learn more <span class="fas fa-chevron-right"></span></a>
+                    <p>Regular health checkups help detect issues early and keep you healthy.</p>
+                    <a href="https://www.nanavatimaxhospital.org/blogs/importance-of-regular-health-check-ups"
+                        class="btn"> Learn more <span class="fas fa-chevron-right"></span></a>
                 </div>
             </div>
-    
+
         </div> <!-- Close box-container -->
-    
+
     </section>
 
     <section class="footer">
@@ -417,15 +438,15 @@
             </div>
         </div>
 
-        <div class="credit"> created by <span>Ms.TechDiva </span> | All rights reservered </div>
+        <div class="credit"> created by <span>Ms.Vaishnavi </span> | All rights reservered </div>
     </section>
-    
+
     <script>
         function logoutUser() {
             // Clear session data
             localStorage.removeItem("isLoggedIn");
             localStorage.removeItem("user");
-    
+
             // Redirect to login page
             window.location.href = "login.html";
         }
@@ -433,4 +454,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
